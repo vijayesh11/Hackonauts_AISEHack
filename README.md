@@ -1,5 +1,6 @@
 # 🌫️ AISEHack Phase 2 — Theme 2: Urban Pollution Forecasting
 
+
 ---
 
 ## 🏆 Competition Overview
@@ -18,7 +19,6 @@ This repository contains our submission for **AISEHack 2026 — Theme 2: Polluti
 | **Competition Baseline** | 0.7780 |
 | **Our Score** | **0.8581** |
 | **Improvement** | **+8 points over baseline** |
-| **Model Checkpoints** | [Available on Kaggle Dataset](https://www.kaggle.com/datasets/mokshajnaundavalli/aisehack-phase2-top-submission-weights/) |
 
 ---
 
@@ -201,109 +201,28 @@ Final output: preds.npy  →  shape (218, 140, 124, 16)
 
 ---
 
-## 📥 Model Checkpoints & Pre-trained Weights
-
-We have published our trained model checkpoints and predictions on Kaggle for reproducibility and benchmarking purposes.
-
-### Kaggle Dataset: Pre-trained Weights & Results
-
-**Dataset Link:** [AISEHack Phase 2 - Top Submission Weights](https://www.kaggle.com/datasets/mokshajnaundavalli/aisehack-phase2-top-submission-weights/)
-
-This dataset contains:
-- ✅ **Trained model weights** for all 4 ensemble models (seeds 42, 43, 44, 45)
-- ✅ **Final predictions** (`preds.npy`) — shape (218, 140, 124, 16)
-- ✅ **Training logs** and validation metrics
-- ✅ **Reproducibility scripts** for inference
-
-### How to Use Pre-trained Models
-
-1. **Option A: Download from Kaggle Dataset**
-   ```bash
-   kaggle datasets download -d mokshajnaundavalli/aisehack-phase2-top-submission-weights
-   unzip aisehack-phase2-top-submission-weights.zip
-   ```
-
-2. **Option B: Use in Kaggle Notebook (Recommended)**
-   - Mount the dataset directly in your notebook:
-   ```python
-   import os
-   checkpoint_path = "/kaggle/input/aisehack-phase2-top-submission-weights/"
-   model_files = os.listdir(checkpoint_path)
-   print("Available checkpoints:", model_files)
-   
-   # Load pre-trained weights
-   model.load_state_dict(torch.load(f"{checkpoint_path}/model_1.pt"))
-   ```
-
-3. **Option C: Use Pre-computed Predictions**
-   - Skip training entirely and use our final predictions:
-   ```python
-   preds = np.load("/kaggle/input/aisehack-phase2-top-submission-weights/preds.npy")
-   # Shape: (218, 140, 124, 16)
-   np.save("/kaggle/working/preds.npy", preds)
-   ```
-
----
-
 ## 🗂️ Repository Structure
 
 ```
-├── aise6.ipynb                    # Full training + inference pipeline (Kaggle Notebook)
-├── README.md                      # This file
-├── License                        # License
-└── Kaggle Dataset Reference
-    └── aisehack-phase2-top-submission-weights/
-        ├── model_1.pt            # Seed 42 checkpoint
-        ├── model_2.pt            # Seed 43 checkpoint
-        ├── model_3.pt            # Seed 44 checkpoint
-        ├── model_4.pt            # Seed 45 checkpoint
-        ├── preds.npy             # Final predictions
-        └── README.txt            # Dataset documentation
+├── aise6.ipynb        # Full training + inference pipeline (Kaggle Notebook)
+├── README.md          # This file
+└── License.md         # License
 ```
 
 ---
 
 ## 🚀 Reproducing Results
 
-> All submissions are backed by a reproducible Kaggle Notebook as per AISEHack competition rules (Sections 6, 7, 8, 9). No external datasets, private artifacts, or pre-trained weights are used beyond the official competition data.
-
-### Method 1: Train from Scratch
+> All submissions are backed by a reproducible Kaggle Notebook as per AISEHack competition rules (Sections 6, 7, 8, 9). No external datasets, private artifacts, or pre-trained weights are used.
 
 1. Open `aise6.ipynb` on Kaggle with **GPU accelerator** enabled
 2. Attach the competition dataset:
    ```
    anrf-aise-hack-phase-2-theme-2-pollution-forecasting-iitd
    ```
-3. Run all cells — training 4 models takes approximately **45–60 minutes** on a T4 GPU
+3. Run all cells — training 4 models takes approximately **45–60 minutes** on a T4 x2 GPU
 4. Output `preds.npy` (shape: `218 × 140 × 124 × 16`) is saved to `/kaggle/working/`
 5. Submit the output file to the Kaggle leaderboard
-
-### Method 2: Use Pre-trained Checkpoints
-
-1. Open Kaggle Notebook
-2. Attach both datasets:
-   - `anrf-aise-hack-phase-2-theme-2-pollution-forecasting-iitd` (competition data)
-   - `aisehack-phase2-top-submission-weights` (pre-trained models)
-3. Load checkpoint and run inference:
-   ```python
-   checkpoint_path = "/kaggle/input/aisehack-phase2-top-submission-weights/model_1.pt"
-   model.load_state_dict(torch.load(checkpoint_path))
-   model.eval()
-   # Run inference...
-   ```
-4. Submit predictions
-
-### Method 3: Use Final Predictions (Fastest)
-
-1. Open Kaggle Notebook
-2. Attach the weights dataset:
-   - `aisehack-phase2-top-submission-weights`
-3. Load and submit:
-   ```python
-   preds = np.load("/kaggle/input/aisehack-phase2-top-submission-weights/preds.npy")
-   np.save("/kaggle/working/preds.npy", preds)
-   # Submit preds.npy directly
-   ```
 
 ---
 
@@ -312,20 +231,10 @@ This dataset contains:
 All packages are pre-installed in the **Kaggle Python Docker environment**:
 
 ```
-torch           — Deep learning framework (CUDA-enabled)
-numpy           — Array and numerical operations
-pandas          — Data utilities
-tqdm            — Training progress tracking
-scipy.ndimage   — Image filtering and morphological operations
-```
-
-**Requirements File (if running locally):**
-```
-torch>=2.0.0
-numpy>=1.21
-pandas>=1.3
-tqdm>=4.50
-scipy>=1.7
+torch       — Deep learning framework (CUDA-enabled)
+numpy       — Array and numerical operations
+pandas      — Data utilities
+tqdm        — Training progress tracking
 ```
 
 ---
@@ -343,15 +252,15 @@ This work aligns with the **Viksit Bharat 2047** vision and the **MAHA AI for Sc
 
 ---
 
+
 ## 📄 License
 
-See [License](./License.md) for details.
+See [License.md](./License.md) for details.
 
 ---
 
+<div align="center">
 
-**Built for AISEHack 2026** · *Organized by ANRF India* · *Co-organized by IBM & IIT Delhi* · *Grand Finale at IIIT Hyderabad*
-
-✨ **Score: 0.8581** | **Baseline: 0.7780** | **Improvement: +8.01%** ✨
+*Built for AISEHack 2026 · Organized by ANRF India · Co-organized by IBM & IIT Delhi · Hosted at IIIT Hyderabad*
 
 </div>
