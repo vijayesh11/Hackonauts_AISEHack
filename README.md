@@ -345,7 +345,7 @@ This work aligns with the **Viksit Bharat 2047** vision and the **MAHA AI for Sc
 
 ## 📄 License
 
-See [License](./License) for details.
+See [License](./License.md) for details.
 
 ---
 
