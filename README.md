@@ -250,7 +250,7 @@ This dataset contains:
 ```
 ├── aise6.ipynb                    # Full training + inference pipeline (Kaggle Notebook)
 ├── README.md                      # This file
-├── LICENSE                        # License
+├── License                        # License
 └── Kaggle Dataset Reference
     └── aisehack-phase2-top-submission-weights/
         ├── model_1.pt            # Seed 42 checkpoint
@@ -345,34 +345,10 @@ This work aligns with the **Viksit Bharat 2047** vision and the **MAHA AI for Sc
 
 ## 📄 License
 
-See [LICENSE](./LICENSE) for details.
+See [License](./License) for details.
 
 ---
 
-## 📞 Citation
-
-If you use this work in your research or development, please cite:
-
-```bibtex
-@competition{aisehack2026,
-  title={AISEHack 2026 — Theme 2: Urban Pollution Forecasting},
-  organization={Anusandhan National Research Foundation (ANRF)},
-  note={Co-organized by IBM India & IIT Delhi, Grand Finale at IIIT Hyderabad (April 4-5, 2026)},
-  year={2026}
-}
-
-@dataset{aisehack_weights_2026,
-  title={AISEHack Phase 2 - Top Submission Weights},
-  author={Team Name},
-  year={2026},
-  publisher={Kaggle},
-  url={https://www.kaggle.com/datasets/mokshajnaundavalli/aisehack-phase2-top-submission-weights/}
-}
-```
-
----
-
-<div align="center">
 
 **Built for AISEHack 2026** · *Organized by ANRF India* · *Co-organized by IBM & IIT Delhi* · *Grand Finale at IIIT Hyderabad*
 
